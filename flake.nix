@@ -2,10 +2,6 @@
 
   description = "Mystic's Nix Flake";
 
-  # ---------------------------
-  #        Input flakes       
-  # ---------------------------
-
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     home-manager = {
@@ -13,10 +9,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-
-  # ---------------------------
-  #        Output flakes       
-  # ---------------------------
 
   outputs = { nixpkgs, home-manager, ... } @ inputs:
     let
