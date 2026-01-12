@@ -14,7 +14,7 @@
   networking.hostName = "spectre";
   time.timeZone = "Asia/Singapore";
 
-  # This is the "Birth Date" of your install. 
-  # It should generally stay what it was when you first installed.
+  # This is the "Birth Date" of the install. 
+  # It should generally stay what it was when nixos was first installed.
   system.stateVersion = "25.05"; 
 }
