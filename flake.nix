@@ -23,10 +23,9 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            # Pointing to your new home entry point
+
             home-manager.users.mystic = import ./home/mystic; 
             
-            # This passes 'inputs' to home-manager modules too
             home-manager.extraSpecialArgs = { inherit inputs; };
           }
         ];
