@@ -1,5 +1,4 @@
 {
-
   description = "Mystic's Nix Flake";
 
   inputs = {
@@ -10,33 +9,28 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, ... } @ inputs:
     let
-      
       system = "x86_64-linux";
-      pkgs = import nixpkgs { inherit system config; };
-      config = { allowUnfree = true; };
-
-      lib = nixpkgs.lib;
-
     in {
-
-      nixosConfigurations.nixos = lib.nixosSystem {
-
+      # TODO: change the hostname to something beter than "nixos"
+      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+        inherit system;
         specialArgs = { inherit inputs; };
-
         modules = [
-          ./hosts/nixos/configuration.nix
+          ./hosts/nixos
+
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.mystic = import ./home/mystic/home.nix;
+            # Pointing to your new home entry point
+            home-manager.users.mystic = import ./home/mystic; 
+            
+            # This passes 'inputs' to home-manager modules too
+            home-manager.extraSpecialArgs = { inherit inputs; };
           }
         ];
-
       };
-
     };
-
 }
