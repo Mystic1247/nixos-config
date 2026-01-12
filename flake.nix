@@ -13,12 +13,11 @@
     let
       system = "x86_64-linux";
     in {
-      # TODO: change the hostname to something beter than "nixos"
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.spectre = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = { inherit inputs; };
         modules = [
-          ./hosts/nixos
+          ./hosts/spectre
 
           home-manager.nixosModules.home-manager
           {

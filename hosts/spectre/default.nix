@@ -11,7 +11,7 @@
   ];
 
   # Machine Identity
-  networking.hostName = "nixos";
+  networking.hostName = "spectre";
   time.timeZone = "Asia/Singapore";
 
   # This is the "Birth Date" of your install. 

@@ -9,6 +9,4 @@
     ./core
     ./features
   ];
-
-  nixpkgs.config.allowUnfree = true;
 }
