@@ -14,7 +14,6 @@
     syntaxHighlighting.enable = true;
   };
 
-  # Tooling
   programs.fzf.enable = true;
 
   programs.direnv = {

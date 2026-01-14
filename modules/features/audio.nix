@@ -8,7 +8,7 @@
     pulse.enable = true;
     wireplumber = {
       enable = true;
-      # TODO: temp fix
+      # temp fix 
       extraConfig."10-bluez-fix" = {
         "monitor.bluez.properties" = {
           "bluez5.roles" = [ "a2dp_sink" "a2dp_source" ];

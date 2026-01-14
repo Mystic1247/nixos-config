@@ -14,5 +14,6 @@
     gnome-tweaks
     refine
     parabolic
+    gnupg
   ];
 }
