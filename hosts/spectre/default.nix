@@ -14,13 +14,15 @@
   networking.hostName = "spectre";
   time.timeZone = "Asia/Singapore";
 
-  services.logind = {
+services.logind = {
   lidSwitch = "ignore";
   lidSwitchExternalPower = "ignore";
   lidSwitchDocked = "ignore";
-  extraConfig = ''
-    HandlePowerKey=suspend
-  '';
+  settings = {
+    Login = {
+      HandlePowerKey = "suspend";
+    };
+  };
 };
 
   # This is the "Birth Date" of the install. 
