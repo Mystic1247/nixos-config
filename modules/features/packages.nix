@@ -6,7 +6,6 @@
     zsh
     fish
     git
-    spotify
     wget
     tree
     pantum-driver
