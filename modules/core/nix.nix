@@ -16,7 +16,7 @@
       options = "--delete-older-than 7d";
     };
 
-    registry.nixpkgs.flake = pkgs.path;
-    nixPath = [ "nixpkgs=${pkgs.path}" ];
+    # registry.nixpkgs.flake = pkgs.path;
+    # nixPath = [ "nixpkgs=${pkgs.path}" ];
   };
 }

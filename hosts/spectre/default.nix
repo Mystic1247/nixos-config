@@ -14,16 +14,14 @@
   networking.hostName = "spectre";
   time.timeZone = "Asia/Singapore";
 
-services.logind = {
-  lidSwitch = "ignore";
-  lidSwitchExternalPower = "ignore";
-  lidSwitchDocked = "ignore";
-  settings = {
+  services.logind.settings = {
     Login = {
+      HandleLidSwitch = "ignore";
+      HandleLidSwitchExternalPower = "ignore";
+      HandleLidSwitchDocked = "ignore";
       HandlePowerKey = "suspend";
     };
   };
-};
 
   # This is the "Birth Date" of the install. 
   # It should generally stay what it was when nixos was first installed.
