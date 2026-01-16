@@ -6,9 +6,9 @@
     helix
     vscode
     micro
-    vesktop
     fastfetch
     hyfetch
+    vesktop
     pear-desktop
     rmpc
     gnome-tweaks
