@@ -9,6 +9,7 @@
     fastfetch
     hyfetch
     cava
+    cavalier
     vesktop
     pear-desktop
     rmpc
