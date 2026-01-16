@@ -8,6 +8,7 @@
     micro
     fastfetch
     hyfetch
+    cava
     vesktop
     pear-desktop
     rmpc
