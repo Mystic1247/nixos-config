@@ -17,5 +17,6 @@
     refine
     parabolic
     gnupg
+    firefox
   ];
 }
