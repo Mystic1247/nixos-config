@@ -18,5 +18,6 @@
     parabolic
     gnupg
     firefox
+    obsidian
   ];
 }
