@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }: 
 
 {
   nixpkgs.config.allowUnfree = true;
@@ -8,6 +8,10 @@
     settings = {
       auto-optimise-store = true;
       experimental-features = [ "nix-command" "flakes" ];
+      
+      trusted-users = [ "root" "mystic" ]; 
+      
+      warn-dirty = false;
     };
     
     gc = {
@@ -16,7 +20,8 @@
       options = "--delete-older-than 7d";
     };
 
-    # registry.nixpkgs.flake = pkgs.path;
-    # nixPath = [ "nixpkgs=${pkgs.path}" ];
+    registry.nixpkgs.flake = inputs.nixpkgs;
+    
+    nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
   };
 }
