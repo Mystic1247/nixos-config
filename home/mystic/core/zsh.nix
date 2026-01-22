@@ -1,9 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   programs.zsh = {
     enable = true;
-    dotDir = ".config/zsh";
+    dotDir = "${config.xdg.configHome}/zsh"; 
+    
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
@@ -14,26 +15,26 @@
     };
 
     shellAliases = {
-      # 
       nix-switch = "nh os switch ~/nixos/ -h spectre";
       nix-test = "nh os test ~/nixos/ -h spectre";
       nix-clean = "nh clean all --keep 3";
-      
-      # Navigation
       conf = "cd ~/nixos";
       vconf = "nvim ~/nixos";
-      
-      # 
       ls = "eza --icons --group-directories-first";
       tree = "eza --tree --icons";
       cat = "bat";
     };
 
-    # Keybindings
-    initExtra = ''
+    initContent = ''
       # Ctrl+Space to accept autosuggestions
       bindkey '^ ' autosuggest-accept
     '';
+  };
+
+  programs.ssh = {
+    enable = true;
+    enableDefaultConfig = false;
+    matchBlocks."*" = { };
   };
 
   programs.starship = {
@@ -54,5 +55,4 @@
   programs.bat.enable = true;
   programs.zoxide.enable = true;
   programs.direnv = { enable = true; nix-direnv.enable = true; };
-  
 }

@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, ... }: # Note we added 'inputs' here!
+{ config, lib, pkgs, inputs, ... }:
 
 {
   users.users.mystic = {
