@@ -1,11 +1,15 @@
-{ ... }: 
+{ lib, ... }:
 
 {
-  imports = [
-    ./audio.nix
-    ./desktop.nix
-    ./printing.nix
-    ./packages.nix
-    ./bluetooth.nix
-  ];
+  imports = 
+    let
+      files = builtins.readDir ./.;
+      validFiles = lib.filterAttrs 
+        (name: type: 
+          (type == "regular" || type == "symlink") && 
+          (lib.hasSuffix ".nix" name) && 
+          (name != "default.nix")
+        ) files;
+    in
+    lib.mapAttrsToList (name: type: ./. + "/${name}") validFiles;
 }
