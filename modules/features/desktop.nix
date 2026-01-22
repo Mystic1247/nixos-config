@@ -14,9 +14,14 @@
 
   services.libinput.enable = true;
 
+  hardware.sensor.iio.enable = true;
+  services.xserver.libinput.enable = true;
+
+
   # Gnome Extentions
   environment.systemPackages = with pkgs; [
-    # TODO: 
+    gnomeExtensions.screen-rotate
+    # TODO: move extentions here
   ];
 
   # 
