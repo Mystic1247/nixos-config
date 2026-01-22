@@ -48,14 +48,11 @@
     };
   };
 
-  # Helper tools that make the shell "Pro"
+  # Helpers
   programs.fzf.enable = true;
   programs.eza.enable = true;
   programs.bat.enable = true;
-  programs.z-oxide.enable = true; # "z" is a smarter "cd" that remembers where you've been
-
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
-  };
+  programs.zoxide.enable = true;
+  programs.direnv = { enable = true; nix-direnv.enable = true; };
+  
 }
