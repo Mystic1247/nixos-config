@@ -18,16 +18,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/spectre
-
           home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-
-            home-manager.users.mystic = import ./home/mystic; 
-            
-            home-manager.extraSpecialArgs = { inherit inputs; };
-          }
         ];
       };
     };
