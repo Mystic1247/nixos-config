@@ -10,8 +10,4 @@
     tree
     pantum-driver
   ];
-
-  environment.gnome.excludePackages = with pkgs; [
-    epiphany
-  ];
 }
