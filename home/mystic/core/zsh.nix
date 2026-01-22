@@ -20,7 +20,7 @@
       nix-clean = "nh clean all --keep 3";
       conf = "cd ~/nixos";
       vconf = "nvim ~/nixos";
-      ls = "eza --icons --group-directories-first";
+      ls = "eza --icons --group-directories-first"; 
       tree = "eza --tree --icons";
       cat = "bat";
     };
