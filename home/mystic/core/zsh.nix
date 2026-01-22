@@ -3,43 +3,56 @@
 {
   programs.zsh = {
     enable = true;
+    dotDir = ".config/zsh";
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "sudo" ];
+      plugins = [ "git" "sudo" "docker" "extract" ];
     };
 
     shellAliases = {
-      # NixOS shortcuts
-      update = "sudo nixos-rebuild switch --flake ~/nixos/#spectre";
-      test = "sudo nixos-rebuild test --flake ~/nixos/#spectre";
-      nc = "nix-collect-garbage -d";
+      # 
+      nix-switch = "nh os switch ~/nixos/ -h spectre";
+      nix-test = "nh os test ~/nixos/ -h spectre";
+      nix-clean = "nh clean all --keep 3";
+      
+      # Navigation
+      conf = "cd ~/nixos";
+      vconf = "nvim ~/nixos";
       
       # 
-      # ls = "eza --icons --group-directories-first";
-      # ll = "eza -lh --icons --group-directories-first";
-      # cat = "bat";
+      ls = "eza --icons --group-directories-first";
+      tree = "eza --tree --icons";
+      cat = "bat";
     };
 
+    # Keybindings
     initExtra = ''
-      # Add any custom extra shell logic
-      bindkey '^ ' autosuggest-accept # Ctrl+Space to accept suggestions
+      # Ctrl+Space to accept autosuggestions
+      bindkey '^ ' autosuggest-accept
     '';
   };
 
-  # starship
   programs.starship = {
     enable = true;
-    enableZshIntegration = true;
+    settings = {
+      add_newline = false;
+      line_break.disabled = true;
+      nix_shell = {
+        symbol = "❄️ ";
+        format = "via [$symbol$state]($style) ";
+      };
+    };
   };
 
-  # CLI tools
+  # Helper tools that make the shell "Pro"
   programs.fzf.enable = true;
   programs.eza.enable = true;
   programs.bat.enable = true;
+  programs.z-oxide.enable = true; # "z" is a smarter "cd" that remembers where you've been
 
   programs.direnv = {
     enable = true;
