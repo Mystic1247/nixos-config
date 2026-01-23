@@ -4,7 +4,6 @@
   home.packages = with pkgs; [
     ghostty
     helix
-    vscode
     micro
     fastfetch
     hyfetch

@@ -17,7 +17,6 @@
   hardware.sensor.iio.enable = true;
   services.xserver.libinput.enable = true;
 
-
   # Gnome Extentions
   environment.systemPackages = with pkgs; [
     gnomeExtensions.screen-rotate
@@ -25,8 +24,5 @@
   ];
 
   # 
-  environment.gnome.excludePackages = (with pkgs; [
-    gnome-tour
-    epiphany
-  ]);
+  environment.gnome.excludePackages = ( with pkgs; [ gnome-tour epiphany ] );
 }
