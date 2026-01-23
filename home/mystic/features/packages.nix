@@ -9,8 +9,8 @@
     hyfetch
     cava
     cavalier
-    vesktop
     pear-desktop
+    vesktop
     rmpc
     gnome-tweaks
     refine
@@ -18,5 +18,8 @@
     gnupg
     firefox
     obsidian
+    nixfmt-rfc-style
+    nil
+    vscode
   ];
 }
