@@ -20,6 +20,7 @@
     obsidian
     nixfmt-rfc-style
     nil
+    winboat
     vscode
   ];
 }
